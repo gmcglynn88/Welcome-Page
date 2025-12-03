@@ -9,6 +9,7 @@
       --primary-color:#63AB8F; --secondary-color:#4A8C7D; --border-color:#DEE2E6;
       --light-bg:#F8F9FA; --card-bg:#FFFFFF; --text-color:#2C3E50; --text-light:#6C757D;
       --pill:#e9f6f0;
+      --dev-color:#FF6B35; --dev-bg:#FFF0EB;
     }
     body{font-family:"Aptos","Segoe UI",Arial,sans-serif;margin:20px;padding:20px;max-width:1400px;background:var(--light-bg);color:var(--text-color)}
     #logo-container{text-align:center;margin-bottom:20px} #logo{width:300px}
@@ -62,6 +63,7 @@
     .loading{opacity:.6;pointer-events:none}
     .future-date{color:#ccc;cursor:not-allowed}
     
+    /* Welcome Page Specific Styles */
     .welcome-container {
       max-width: 800px;
       margin: 0 auto;
@@ -122,47 +124,6 @@
       color: var(--text-color);
     }
     
-    .get-started {
-      text-align: center;
-      background: var(--light-bg);
-      padding: 30px;
-      border-radius: 12px;
-      margin-top: 40px;
-      border: 1px solid var(--border-color);
-    }
-    
-    .app-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    
-    .app-link {
-      display: inline-block;
-      padding: 12px 24px;
-      background: var(--primary-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-    
-    .app-link:hover {
-      background: var(--secondary-color);
-      transform: translateY(-2px);
-    }
-    
-    .app-link.secondary {
-      background: var(--text-light);
-    }
-    
-    .app-link.secondary:hover {
-      background: #5a6268;
-    }
-    
     .no-coding-note {
       background: #e9f6f0;
       border: 1px solid var(--primary-color);
@@ -185,6 +146,167 @@
       color: var(--secondary-color);
     }
     
+    /* Development Updates Styles */
+    .development-updates {
+      background: var(--dev-bg);
+      border: 1px solid var(--dev-color);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    .development-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--dev-color);
+    }
+    
+    .development-header h3 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    
+    .development-badge {
+      background: var(--dev-color);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: auto;
+    }
+    
+    .development-items {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .development-item {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 15px;
+      display: flex;
+      gap: 15px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .development-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .dev-status {
+      min-width: 100px;
+      text-align: center;
+    }
+    
+    .status-badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .status-planning {
+      background: #e3f2fd;
+      color: #1565c0;
+      border: 1px solid #bbdefb;
+    }
+    
+    .status-development {
+      background: #fff3e0;
+      color: #ef6c00;
+      border: 1px solid #ffe0b2;
+    }
+    
+    .status-testing {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #c8e6c9;
+    }
+    
+    .status-deployment {
+      background: #f3e5f5;
+      color: #7b1fa2;
+      border: 1px solid #e1bee7;
+    }
+    
+    .dev-content {
+      flex: 1;
+    }
+    
+    .dev-title {
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+    
+    .dev-description {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    .dev-eta {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .dev-eta:before {
+      content: "📅";
+      font-size: 0.9rem;
+    }
+    
+    .no-updates {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-light);
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Toggle for Development Updates */
+    .dev-toggle-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .dev-toggle-btn {
+      background: var(--light-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-light);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .dev-toggle-btn:hover {
+      background: var(--border-color);
+      color: var(--text-color);
+    }
+    
+    .dev-toggle-btn.active {
+      background: var(--dev-color);
+      color: white;
+      border-color: var(--dev-color);
+    }
+    
     .icon {
       display: inline-block;
       margin-right: 8px;
@@ -195,15 +317,13 @@
         font-size: 2rem;
       }
       
-      .app-links {
+      .development-item {
         flex-direction: column;
-        align-items: center;
+        gap: 10px;
       }
       
-      .app-link {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
+      .dev-status {
+        text-align: left;
       }
     }
   </style>
@@ -264,40 +384,170 @@
           Everything sits together in a single structured environment that supports daily operational activity without any need for complex coding.
         </p>
       </div>
+    </div>
+    
+    <!-- Development Updates Section - Only shows when there are updates -->
+    <div id="development-updates" class="development-updates" style="display: none;">
+      <div class="development-header">
+        <span class="icon">🚧</span>
+        <h3>What's in Development</h3>
+        <span id="dev-count-badge" class="development-badge">0 items</span>
+      </div>
       
-      <div class="sidebar-note">
-        <h3>Getting Started</h3>
-        <p>To navigate to an application, please select from the side bar. Each application is designed to work seamlessly with your Genesys environment and provide the insights you need to drive operational excellence.</p>
-        <div class="app-links">
-          <a href="https://gmcglynn88.github.io/IPI-changes-on-the-fly/" class="app-link">
-            <span class="icon">📊</span> Interaction Insights
-          </a>
-          <a href="#" class="app-link secondary">
-            <span class="icon">📈</span> Performance Analytics (Coming Soon)
-          </a>
-          <a href="#" class="app-link secondary">
-            <span class="icon">👥</span> Team Management (Coming Soon)
-          </a>
-        </div>
+      <div id="development-items-container" class="development-items">
+        <!-- Development items will be inserted here by JavaScript -->
       </div>
     </div>
     
-    <div class="get-started">
-      <h2 style="color: var(--primary-color); margin-top: 0;">Ready to Get Started?</h2>
-      <p>Begin by exploring the applications available in the sidebar. Each tool is designed to work together, providing you with a comprehensive view of your operations.</p>
-      <p class="muted" style="margin-top: 20px;">
-        Need help? Contact your system administrator or refer to the documentation for each application.
-      </p>
+    <!-- Simple toggle to show/hide development updates (optional) -->
+    <div class="dev-toggle-container">
+      <button id="toggle-dev-btn" class="dev-toggle-btn">
+        <span class="icon">👷</span> Show Development Updates
+      </button>
+    </div>
+    
+    <div class="sidebar-note">
+      <h3>Getting Started</h3>
+      <p>To navigate to an application, please select from the side bar. Each application is designed to work seamlessly with your Genesys environment and provide the insights you need to drive operational excellence.</p>
     </div>
   </div>
 
   <script>
-    // Simple script to handle welcome page interactions
+    // Configuration for Development Updates
+    const DEVELOPMENT_UPDATES = {
+      enabled: true, // Set to false to hide the entire development section
+      showByDefault: true, // Set to false to hide by default (users can toggle)
+      updates: [
+        {
+          id: 1,
+          title: "Real-Time Performance Analytics",
+          description: "Enhanced dashboard with real-time metrics and predictive analytics for agent performance and queue management.",
+          status: "development", // planning, development, testing, deployment
+          eta: "Q2 2024",
+          priority: "high"
+        },
+        {
+          id: 2,
+          title: "Automated Report Scheduling",
+          description: "Schedule automated report generation and distribution to stakeholders via email or Teams.",
+          status: "testing",
+          eta: "Q1 2024",
+          priority: "medium"
+        },
+        {
+          id: 3,
+          title: "Mobile Operations App",
+          description: "Mobile-friendly version of key dashboards for on-the-go monitoring and management.",
+          status: "planning",
+          eta: "Q3 2024",
+          priority: "medium"
+        },
+        {
+          id: 4,
+          title: "Enhanced Transfer Analytics",
+          description: "Advanced reporting on transfer patterns with recommendations for optimization.",
+          status: "deployment",
+          eta: "March 2024",
+          priority: "high"
+        }
+      ]
+    };
+
+    // Development status configuration
+    const STATUS_CONFIG = {
+      planning: {
+        label: "Planning",
+        class: "status-planning",
+        icon: "📋"
+      },
+      development: {
+        label: "In Development",
+        class: "status-development",
+        icon: "👨‍💻"
+      },
+      testing: {
+        label: "Testing",
+        class: "status-testing",
+        icon: "🧪"
+      },
+      deployment: {
+        label: "Deployment",
+        class: "status-deployment",
+        icon: "🚀"
+      }
+    };
+
     document.addEventListener('DOMContentLoaded', function() {
-      // Highlight current year in footer if needed
-      const yearSpan = document.getElementById('currentYear');
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+      const devSection = document.getElementById('development-updates');
+      const devItemsContainer = document.getElementById('development-items-container');
+      const devCountBadge = document.getElementById('dev-count-badge');
+      const toggleBtn = document.getElementById('toggle-dev-btn');
+      
+      // Check if development updates should be shown
+      if (DEVELOPMENT_UPDATES.enabled && DEVELOPMENT_UPDATES.updates.length > 0) {
+        // Show the development section
+        devSection.style.display = 'block';
+        
+        // Update badge count
+        devCountBadge.textContent = `${DEVELOPMENT_UPDATES.updates.length} item${DEVELOPMENT_UPDATES.updates.length !== 1 ? 's' : ''}`;
+        
+        // Sort updates by priority (high first) and then by status
+        const sortedUpdates = [...DEVELOPMENT_UPDATES.updates].sort((a, b) => {
+          const priorityOrder = { high: 1, medium: 2, low: 3 };
+          const statusOrder = { deployment: 1, testing: 2, development: 3, planning: 4 };
+          
+          if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
+            return priorityOrder[a.priority] - priorityOrder[b.priority];
+          }
+          return statusOrder[a.status] - statusOrder[b.status];
+        });
+        
+        // Render development items
+        sortedUpdates.forEach(update => {
+          const status = STATUS_CONFIG[update.status];
+          
+          const devItem = document.createElement('div');
+          devItem.className = 'development-item';
+          devItem.innerHTML = `
+            <div class="dev-status">
+              <div class="status-badge ${status.class}">
+                ${status.icon} ${status.label}
+              </div>
+            </div>
+            <div class="dev-content">
+              <div class="dev-title">${update.title}</div>
+              <div class="dev-description">${update.description}</div>
+              <div class="dev-eta">ETA: ${update.eta}</div>
+            </div>
+          `;
+          
+          devItemsContainer.appendChild(devItem);
+        });
+        
+        // Toggle button functionality
+        let showDevUpdates = DEVELOPMENT_UPDATES.showByDefault;
+        updateToggleButton();
+        
+        toggleBtn.addEventListener('click', function() {
+          showDevUpdates = !showDevUpdates;
+          updateToggleButton();
+        });
+        
+        function updateToggleButton() {
+          if (showDevUpdates) {
+            devSection.style.display = 'block';
+            toggleBtn.innerHTML = '<span class="icon">👷</span> Hide Development Updates';
+            toggleBtn.classList.add('active');
+          } else {
+            devSection.style.display = 'none';
+            toggleBtn.innerHTML = '<span class="icon">👷</span> Show Development Updates';
+            toggleBtn.classList.remove('active');
+          }
+        }
+      } else {
+        // Hide the entire section if no updates or disabled
+        devSection.style.display = 'none';
+        toggleBtn.style.display = 'none';
       }
       
       // Add animation to feature list items
@@ -313,6 +563,24 @@
         }, 100 * index);
       });
     });
+    
+    // Simple function to add/remove development updates (can be called from console for testing)
+    window.updateDevelopmentItems = function(newUpdates) {
+      if (newUpdates && Array.isArray(newUpdates)) {
+        DEVELOPMENT_UPDATES.updates = newUpdates;
+        location.reload();
+      }
+    };
+    
+    // Example: Call this from browser console to test adding updates
+    // window.updateDevelopmentItems([...DEVELOPMENT_UPDATES.updates, {
+    //   id: 5,
+    //   title: "New Feature",
+    //   description: "Testing dynamic updates",
+    //   status: "planning",
+    //   eta: "Soon",
+    //   priority: "medium"
+    // }]);
   </script>
 </body>
 </html>
